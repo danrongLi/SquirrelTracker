@@ -21,6 +21,6 @@ from django.conf.urls import url
 
 urlpatterns = [
     path('index/',views.index),
-    path('', include('SquirrelFinder.urls')),
+   # path('', include('SquirrelFinder.urls')),
     path('admin/', admin.site.urls),
 ]
