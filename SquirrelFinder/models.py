@@ -9,7 +9,7 @@ class SquirrelTracker(models.Model):
         help_text = ('Longitude'),
         max_length = 50,
         )
-    Unique_Squirrel_Id = models.CharField(
+    Unique_Squirrel_ID=models.CharField(
         help_text = ('Unique Squirrel Id'),
         max_length = 50,
         )
@@ -126,7 +126,7 @@ class SquirrelTracker(models.Model):
         max_length = 50,)
     Hectare_Squirrel_Number = models.IntegerField(
         help_text = ('Squirrel Number'),)
-    LatLong = models.CharField(
+    Latlong = models.CharField(
         help_text = ('LatLong Point'),
         max_length = 50,
         )
@@ -137,7 +137,7 @@ class SquirrelTracker(models.Model):
     Color_Note = models.CharField(
         help_text = ('Color Note'),
         max_length = 50,)
-    Combination_Primary_Highlight_Color = models.CharField(
+    Combination_of_Primary_and_Highlight_Color = models.CharField(
         help_text = ('Combination of Primary and Highlight'),
         max_length = 50,)
     Above_Ground_Sighter_Measurement = models.CharField(
@@ -149,7 +149,7 @@ class SquirrelTracker(models.Model):
             help_text='Moans',
             default = False,)
     
-    objects = CopyManager()
+
     def __str__(self):
         return self.name
 
