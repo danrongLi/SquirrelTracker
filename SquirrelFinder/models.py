@@ -1,11 +1,11 @@
 from django.db import models
 from django.utils.translation import gettext as _
 class SquirrelTracker(models.Model):
-    X = models.FloatField (  
+    X = models.CharField (  
         help_text = ('Latitude'),
         max_length = 50,
         )
-    Y = models.FloatField(
+    Y = models.CharField(
         help_text = ('Longitude'),
         max_length = 50,
         )
@@ -25,8 +25,9 @@ class SquirrelTracker(models.Model):
         max_length = 50,
         choices = SHIFT_CHOICES,
         )
-    Date = models.DateField(
+    Date = models.CharField(
         help_text = ('date'),
+        max_length = 50,
         )
     ADULT='Adult'
     JUVENILE='Juvenile'
@@ -76,47 +77,47 @@ class SquirrelTracker(models.Model):
         max_length = 50,
         null = True,
         )
-    Running = models.BooleanField(
+    Running = models.CharField(
         help_text = ('Running?'),
-        default = False,)
-    Chasing = models.BooleanField(
+        max_length = 50,)
+    Chasing = models.CharField(
         help_text = ('Chasing?'),
-        default = False,)
-    Climbing = models.BooleanField(
+        max_length = 50,)
+    Climbing = models.CharField(
         help_text = ('Climbing?'),
-        default = False,)
-    Eating = models.BooleanField(
+        max_length =50,)
+    Eating = models.CharField(
         help_text = ('Eating?'),
-        default = False,)
-    Foraging = models.BooleanField(
+        max_length = 50,)
+    Foraging = models.CharField(
         help_text = ('Foraging?'),
-        default = False,)
+        max_length = 50,)
     Other_Activities = models.CharField(
         help_text = ('Other Activities'),
         max_length = 50,
         null = True,
         )
-    Kuks = models.BooleanField(
+    Kuks = models.CharField(
         help_text = ('Kuks?'),
-        default = False,)
-    Quaas = models.BooleanField(
+        max_length=50,)
+    Quaas = models.CharField(
         help_text = ('Quaas?'),
-        default = False,)
-    Tail_Flags = models.BooleanField(
+        max_length = 50,)
+    Tail_Flags = models.CharField(
         help_text = ('Tail Flags?'),
-        default = False,)
-    Tail_Twitches = models.BooleanField(
+        max_length =50,)
+    Tail_Twitches = models.CharField(
         help_text = ('Tail Twitches?'),
-        default = False,)
-    Approaches = models.BooleanField(
+        max_length = 50,)
+    Approaches = models.CharField(
         help_text = ('Approaches?'),
-        default = False,)
-    Indifferent = models.BooleanField(
+        max_length = 50,)
+    Indifferent = models.CharField(
         help_text = ('Indifferent?'),
-        default = False,)
-    Runs_From = models.BooleanField(
+        max_length = 50,)
+    Runs_From = models.CharField(
         help_text = ('Runs From?'),
-        default = False,)
+        max_length = 50,)
     Other_Interactions = models.CharField(
         help_text = ('Others Interactions'),
         max_length = 50,
@@ -124,8 +125,9 @@ class SquirrelTracker(models.Model):
     Hectare = models.CharField(
         help_text = ('Hectare'),
         max_length = 50,)
-    Hectare_Squirrel_Number = models.IntegerField(
-        help_text = ('Squirrel Number'),)
+    Hectare_Squirrel_Number = models.CharField(
+        help_text = ('Squirrel Number'),
+        max_length = 50,)
     Latlong = models.CharField(
         help_text = ('LatLong Point'),
         max_length = 50,
@@ -145,11 +147,11 @@ class SquirrelTracker(models.Model):
             max_length = 50,
             null = True,
             )
-    Moans = models.BooleanField(
+    Moans = models.CharField(
             help_text='Moans',
-            default = False,)
+            max_length = 50,)
     
 
-    def __str__(self):
-        return self.name
+    #def __str__(self):
+       # return self.name
 
