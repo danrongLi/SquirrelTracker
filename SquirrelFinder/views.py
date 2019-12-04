@@ -8,4 +8,8 @@ def index(request):
     return HttpResponse('Hi! How are you !!!')
 
 def map(request):
-    return render(request, 'map.html', {})
+    squirrels = SquirrelTracker.objects.all()
+    context = {
+            'Squirrel':squirrels,
+            }
+    return render(request, 'map.html', context)

@@ -6,5 +6,4 @@ from django.urls import path
 
 urlpatterns = [ 
     url(r'', views.map, name="map"),
-    path('index/',views.index),
 ]

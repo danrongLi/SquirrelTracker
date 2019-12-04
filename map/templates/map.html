@@ -40,14 +40,17 @@ crossorigin=""></script>
             // must leave attribution in!
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         }).addTo(map);
-        <!-- L.Icon.Default.prototype.options.iconSize = 15; -->
+	
+	<!-- L.Icon.Default.prototype.options.iconSize = 15; -->
         <!-- L.Icon.Default.prototype.options.iconAnchor = [0, 0]; -->
         <!-- L.Icon.Default.prototype.options.shadowSize = 15; -->
         <!-- L.Icon.Default.prototype.options.shadowAnchor = [0, 0]; -->
-        {% for sighting in sightings %}
-          var point_lat_lon = [{{ sighting.latitude }}, {{ sighting.longitude }}];
+	
+	{% for sighting in SquirrelTracker %}
+          var point_lat_lon = [{{ sighting.X }}, {{ sighting.Y }}];
           var marker = L.marker(point_lat_lon).addTo(map);
         {% endfor %}
+        
     </script>
   </body>
 </html>
