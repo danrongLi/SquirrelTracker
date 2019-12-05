@@ -5,5 +5,6 @@ from SquirrelFinder import views
 from django.urls import path
 
 urlpatterns = [ 
-    url(r'', views.map, name="map"),
+   # url(r'', views.map, name="map")
+    path('map/',views.map, name='map'),
 ]

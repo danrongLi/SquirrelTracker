@@ -20,6 +20,7 @@ from django.conf.urls import include
 from django.conf.urls import url
 
 urlpatterns = [
-    path('map/', include('SquirrelFinder.urls')),
+   # path('map/',views.map, name='map'),
+    path('SquirrelFinder/', include('SquirrelFinder.urls')),
     path('admin/', admin.site.urls),
 ]
