@@ -1,13 +1,12 @@
 from django.db import models
 from django.utils.translation import gettext as _
+
 class SquirrelTracker(models.Model):
-    X = models.CharField (  
-        help_text = ('Latitude'),
-        max_length = 50,
-        )
-    Y = models.CharField(
+    X = models.FloatField (  
         help_text = ('Longitude'),
-        max_length = 50,
+        )
+    Y = models.FloatField(
+        help_text = ('Latitude'),
         )
     Unique_Squirrel_ID=models.CharField(
         help_text = ('Unique Squirrel Id'),
@@ -151,7 +150,8 @@ class SquirrelTracker(models.Model):
             help_text='Moans',
             max_length = 50,)
     
-
+    def __str__(self):
+        return self.Unique_Squirrel_ID
     #def __str__(self):
        # return self.name
 
