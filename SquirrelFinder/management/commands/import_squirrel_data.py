@@ -14,8 +14,8 @@ class Command(BaseCommand):
                 csv_reader = csv.reader(csv_file,delimiter = ',')
                 for row in csv_reader:
                     ST = SquirrelTracker()
-                    ST.X = row[0]
-                    ST.Y = row[1]
+                    ST.X = float(row[0])
+                    ST.Y = float(row[1])
                     ST.Unique_Squirrel_ID = row[2]
                     ST.Hectare = row[3]
                     ST.Shift = row[4]
@@ -46,4 +46,3 @@ class Command(BaseCommand):
                     ST.Other_Interactions = row[29]
                     ST.Latlong =row[30]
                     ST.save()
- 
