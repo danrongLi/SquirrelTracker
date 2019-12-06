@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
         <body>
+		<h1>Lets do some editings about this Squirrel: {{squirrel.Unique_Squirrel_ID }}</h1>
                 <form action="/SquirrelFinder/sightings/{{SquirrelTracker.Unique_Squirrel_ID}}" method = 'POST'>
                         {% csrf_token %}
                         {{ form.as_p}}
