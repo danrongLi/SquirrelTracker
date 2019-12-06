@@ -95,7 +95,7 @@ def edit_sighting(request, Unique_Squirrel_ID):
     form = SquirrelForm(request.POST or None, instance=squirrel)
     if request.method =='POST':
         #check data with form
-        form = SquirrelForm(request.POST, instance= squirrel)
+        #form = SquirrelForm(request.POST, instance= squirrel)
         if form.is_valid():
             form.save()
             return redirect(f'/SquirrelFinder/map/')
