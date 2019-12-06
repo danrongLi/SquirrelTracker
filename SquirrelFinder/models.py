@@ -9,7 +9,7 @@ class SquirrelTracker(models.Model):
         help_text = ('Latitude'),
         )
     Unique_Squirrel_ID=models.CharField(
-        help_text = ('Unique Squirrel Id'),
+        help_text = ('Unique Squirrel ID'),
         max_length = 50,
         )
     PM = 'PM'
