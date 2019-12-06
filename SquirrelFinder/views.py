@@ -43,7 +43,7 @@ def add_sighting(request):
         form = SquirrelForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('SquirrelFinder/sightings/')
+            return redirect(f'/SquirrelFinder/sightings/')
     else:
         #build empty form
         form = SquirrelForm()
@@ -52,57 +52,18 @@ def add_sighting(request):
             }
     return render(request,'finder/edit.html',context)
 
-class SquirrelForm(ModelForm):
-    class Meta:
-        model=SquirrelTracker
-        fields=[
-                "X",
-                "Y",
-                "Unique_Squirrel_ID",
-                "Shift",
-                "Date",
-                "Age",
-                "Primary_Fur_Color",
-                "Location",
-                "Specific_Location",
-                "Running",
-                "Chasing",
-                "Climbing",
-                "Eating",
-                "Foraging",
-                "Other_Activities",
-                "Kuks",
-                "Quaas",
-                "Tail_Flags",
-                "Tail_Twitches",
-                "Approaches",
-                "Indifferent",
-                "Runs_From",
-                "Other_Interactions",
-                "Hectare",
-                "Hectare_Squirrel_Number",
-                "Latlong",
-                "Highlight_Fur_Color",
-                "Color_Note",
-                "Combination_of_Primary_and_Highlight_Color",
-                "Above_Ground_Sighter_Measurement",
-                "Moans",
-                ]
 
-def edit_sighting(request, Unique_Squirrel_ID):
-    #squirrel = get_object_or_404(SquirrelTracker, pk=SquirrelTracker.Unique_Squirrel_ID)
-    squirrel= SquirrelTracker.objects.filter( Unique_Squirrel_ID =Unique_Squirrel_ID).first()
-    form = SquirrelForm(request.POST or None, instance=squirrel)
+def edit_sighting(request, Squirrel_ID):
+    squirrel= SquirrelTracker.objects.filter( Unique_Squirrel_ID =Squirrel_ID).first()
     if request.method =='POST':
         #check data with form
-        #form = SquirrelForm(request.POST, instance= squirrel)
+        form = SquirrelForm(request.POST, instance= squirrel)
         if form.is_valid():
             form.save()
             return redirect(f'/SquirrelFinder/map/')
-   # else:
-   #     #build empty form
-   #     form = SquirrelForm(instance = squirrel)
-    context = {
+    else:
+        form = SquirrelForm(instance = squirrel)
+        context = {
             'form':form,
             'squirrel':squirrel,
             }
