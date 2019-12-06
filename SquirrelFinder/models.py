@@ -11,6 +11,8 @@ class SquirrelTracker(models.Model):
     Unique_Squirrel_ID=models.CharField(
         help_text = ('Unique Squirrel ID'),
         max_length = 50,
+        unique = True,
+        #primary_key=True,
         )
     PM = 'PM'
     AM = 'AM'

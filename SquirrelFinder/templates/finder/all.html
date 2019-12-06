@@ -11,7 +11,8 @@
 
     <ul>
     {% for squirrel in squirrels %}
-    <li><a href="/SquirrelFinder/sightings/{{ squirrel.id }}">{{ squirrel.Unique_Squirrel_ID }}</a></li>
+    <li><a href="/SquirrelFinder/sightings/{{ squirrel.Unique_Squirrel_ID }}"
+	   class="btn btn-warning" id='{{squirrel.Unique_Squirrel_ID}}'>{{ squirrel.Unique_Squirrel_ID }}</a></li>
     {% endfor %}
     </ul>
 
