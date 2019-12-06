@@ -5,6 +5,10 @@
 </head>
 
 <body>
+	<nav>
+    <a href="{% url 'add' %}" class="navbar-link btn-lg">Click Here To Add A Squirrel!</a>
+</nav>
+
     <ul>
     {% for squirrel in squirrels %}
     <li><a href="/SquirrelFinder/sightings/{{ squirrel.Unique_Squirrel_ID }}">{{ squirrel.Unique_Squirrel_ID }}</a></li>
