@@ -16,7 +16,7 @@ def map(request):
     return render(request, 'finder/map.html', context)
 
 def all_sighting(request):
-    squirrels= SquirrelTracker.objects.all()
+    squirrels= SquirrelTracker.objects.order_by('Unique_Squirrel_ID')
     context= {'squirrels':squirrels,
             }
     return render(request, 'finder/all.html', context)
