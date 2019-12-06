@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
         <body>
-                <form method = 'POST'>
+                <form action="/SquirrelFinder/sightings/{{SquirrelTracker.Unique_Squirrel_ID}}" method = 'POST'>
                         {% csrf_token %}
                         {{ form.as_p}}
                         <br>

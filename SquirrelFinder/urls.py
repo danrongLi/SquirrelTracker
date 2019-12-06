@@ -7,7 +7,10 @@ from django.urls import path
 
 urlpatterns = [
         path('map/',views.map),
+        path('sightings/stats',views.sighting_stats),
         path('sightings/',views.all_sighting),
-        path('sightings/add',views.add_sighting),
-        path('sightings/<Unique_Squirrel_ID>',views.edit_sighting)
+        path('sightings/add',views.add_sighting,name='add_sighting'),
+        #path('sightings/<str:unique_squirrel_id>',views.edit_sighting),
+        path('sightings/<Unique_Squirrel_ID>',views.edit_sighting,name='edit_sighting'),
+
 ]
