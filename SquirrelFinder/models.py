@@ -132,7 +132,7 @@ class SquirrelTracker(models.Model):
         help_text = ('Highlight Fur Color'),
         max_length = 50,
         )
-    Color_Note = models.CharField(
+    Color_Notes= models.CharField(
         help_text = ('Color Note'),
         max_length = 50,)
     Combination_of_Primary_and_Highlight_Color = models.CharField(
