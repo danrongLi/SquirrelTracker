@@ -30,17 +30,11 @@ class Command(BaseCommand):
                     ST.X = float(row['x'])
                     ST.Y = float(row['y'])
                     ST.Unique_Squirrel_ID = row['unique_squirrel_id']
-                    ST.Hectare = row['hectare']
                     ST.Shift = row['shift']
                     ST.Date = datetime.datetime.strptime(row['date'],'%m%d%Y')
-                    ST.Hectare_Squirrel_Number = row['hectare_squirrel_number']
                     ST.Age = row['age']
                     ST.Primary_Fur_Color = row['primary_fur_color']
-                    ST.Highlight_Fur_Color = row['highlight_fur_color']
-                    ST.Combination_of_Primary_and_Highlight_Color = row['combination_of_primary_and']
-                    ST.Color_Notes = row['color_notes']
                     ST.Location = row['location']
-                    ST.Above_Ground_Sighter_Measurement = row['above_ground_sighter']
                     ST.Specific_Location = row['specific_location']
                     ST.Running = to_boo(row['running'])
                     ST.Chasing = to_boo(row['chasing'])
@@ -56,5 +50,4 @@ class Command(BaseCommand):
                     ST.Approaches = to_boo(row['approaches'])
                     ST.Indifferent = to_boo(row['indifferent'])
                     ST.Runs_From =to_boo(row['runs_from'])
-                    ST.Other_Interactions = row['other_interactions']
                     ST.save()
