@@ -11,5 +11,7 @@ The app created has the following functions:
 5. /SquirrelFinder/sightings/stats shows 5 very important statisitics about the squirrels
 
 :green_heart: Project Group 84, Section 2
+
 :yellow_heart: UNIs: [dl3333, qz2391]
+
 :star: The link to the server running our application: https://danrong4523.appspot.com/ or https://tools-for-anlytics.appspot.com/
