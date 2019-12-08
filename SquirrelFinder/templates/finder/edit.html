@@ -2,12 +2,12 @@
 <html>
         <body>
 		<h1>Lets do some editings about this Squirrel: {{squirrel.Unique_Squirrel_ID }}</h1>
+		<a href="/SquirrelFinder/sightings/">Click Here to go back to the list of squirrel!</a>
                 <form method = 'POST'>
                         {% csrf_token %}
                         {{ form.as_p}}
                         <br>
                         <input type ='submit' value = 'submit'>
                 </form>
-		<a href="/SquirrelFinder/sightings/">Click Here to go back to the list of squirrels!</a>
         </body>
 </html>
