@@ -10,3 +10,4 @@ The app created has the following functions:
 4. /SquirrelFinder/sightings/add/ gives an empty form and you can add your customized squirrel by filling out the attributes. After submission, the database will change accordingly. Notice: the Date format: yyyy-mm-dd.
 5. /SquirrelFinder/sightings/stats shows 5 very important statisitics about the squirrels
 
+:green_heart: Project Group 84, Section 2
