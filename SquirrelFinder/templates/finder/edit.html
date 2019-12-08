@@ -2,6 +2,9 @@
 <html>
         <body>
 		<h1>Lets do some editings about this Squirrel: {{squirrel.Unique_Squirrel_ID }}</h1>
+		<a href="/SquirrelFinder/sightings/">Click Here to go back to the list of squirrel!</a>
+		<a href="/SquirrelFinder/map/">Click Here to see the map again :)</a>
+		<a href="/SquirrelFinder/sightings/stats">Click Here to view some facts about squirrels!</a>
                 <form method = 'POST'>
                         {% csrf_token %}
                         {{ form.as_p}}
