@@ -3,6 +3,7 @@
 
 The project aims to keep track of all the known squirrels in the Central Park, New York. With the help of the 2018 Central Park Squirrel Census - Squirrel Data downloaded from [2018 Central Park Squirrel Census Website](https://data.cityofnewyork.us/Environment/2018-Central-Park-Squirrel-Census-Squirrel-Data/vfnx-vebw), the project built a datase of the known squirrels in the Central Park, New York with the following attribute: Latitud, Longitude, Unique Squirrel ID, Shift, Date, Age, Primary Fur Color, Location, Specific Location, Running, Chasing, Climbing, Eating, Foraging, Other Activities, Kuks, Quaas, Moans, Tail flags, Tail twitches, Approaches, Indifferent, Runs from. 
 
+:squirrel: :squirrel: :squirrel: :squirrel: :squirrel: :squirrel: :squirrel: :squirrel:
 The app created has the following functions:
 1. Management command function to import and export the Squirrel Census Data
 2. /SquirrelFinder/map/ shows a map marked with random 100 squireel locations in the Central Park, New York
