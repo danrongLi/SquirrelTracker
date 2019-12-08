@@ -26,9 +26,8 @@ class SquirrelTracker(models.Model):
         max_length = 50,
         choices = SHIFT_CHOICES,
         )
-    Date = models.CharField(
+    Date = models.DateField(
         help_text = ('date'),
-        max_length = 50,
         )
     ADULT='Adult'
     JUVENILE='Juvenile'
@@ -78,47 +77,47 @@ class SquirrelTracker(models.Model):
         max_length = 50,
         null = True,
         )
-    Running = models.CharField(
+    Running = models.BooleanField(
         help_text = ('Running?'),
-        max_length = 50,)
-    Chasing = models.CharField(
+        default = False,)
+    Chasing = models.BooleanField(
         help_text = ('Chasing?'),
-        max_length = 50,)
-    Climbing = models.CharField(
+        default = False,)
+    Climbing = models.BooleanField(
         help_text = ('Climbing?'),
-        max_length =50,)
-    Eating = models.CharField(
+        default = False,)
+    Eating = models.BooleanField(
         help_text = ('Eating?'),
-        max_length = 50,)
-    Foraging = models.CharField(
+        default = False,)
+    Foraging = models.BooleanField(
         help_text = ('Foraging?'),
-        max_length = 50,)
+        default = False,)
     Other_Activities = models.CharField(
         help_text = ('Other Activities'),
         max_length = 50,
         null = True,
         )
-    Kuks = models.CharField(
+    Kuks = models.BooleanField(
         help_text = ('Kuks?'),
-        max_length=50,)
-    Quaas = models.CharField(
+        default = False,)
+    Quaas = models.BooleanField(
         help_text = ('Quaas?'),
-        max_length = 50,)
-    Tail_Flags = models.CharField(
+        default = False,)
+    Tail_Flags = models.BooleanField(
         help_text = ('Tail Flags?'),
-        max_length =50,)
-    Tail_Twitches = models.CharField(
+        default = False,)
+    Tail_Twitches = models.BooleanField(
         help_text = ('Tail Twitches?'),
-        max_length = 50,)
-    Approaches = models.CharField(
+        default = False,)
+    Approaches = models.BooleanField(
         help_text = ('Approaches?'),
-        max_length = 50,)
-    Indifferent = models.CharField(
+        default = False,)
+    Indifferent = models.BooleanField(
         help_text = ('Indifferent?'),
-        max_length = 50,)
-    Runs_From = models.CharField(
+        default = False,)
+    Runs_From = models.BooleanField(
         help_text = ('Runs From?'),
-        max_length = 50,)
+        default = False,)
     Other_Interactions = models.CharField(
         help_text = ('Others Interactions'),
         max_length = 50,
@@ -129,15 +128,11 @@ class SquirrelTracker(models.Model):
     Hectare_Squirrel_Number = models.CharField(
         help_text = ('Squirrel Number'),
         max_length = 50,)
-    Latlong = models.CharField(
-        help_text = ('LatLong Point'),
-        max_length = 50,
-        )
     Highlight_Fur_Color = models.CharField(
         help_text = ('Highlight Fur Color'),
         max_length = 50,
         )
-    Color_Note = models.CharField(
+    Color_Notes= models.CharField(
         help_text = ('Color Note'),
         max_length = 50,)
     Combination_of_Primary_and_Highlight_Color = models.CharField(
@@ -148,9 +143,9 @@ class SquirrelTracker(models.Model):
             max_length = 50,
             null = True,
             )
-    Moans = models.CharField(
+    Moans = models.BooleanField(
             help_text='Moans',
-            max_length = 50,)
+            default = False,)
     
     def __str__(self):
         return self.Unique_Squirrel_ID

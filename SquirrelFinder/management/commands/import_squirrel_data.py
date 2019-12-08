@@ -2,47 +2,59 @@ from django.core.management.base import BaseCommand, CommandError
 from SquirrelFinder.models import SquirrelTracker
 import csv
 import os
+import datetime
+
 class Command(BaseCommand):
     help = 'Import the csv'
     def add_arguments(self,parser):
         parser.add_argument('path', nargs='+',type = str)
         
     def handle(self, *args, **options):
+
+        def to_boo(text):
+            if text.lower() == 'true':
+                return True
+            elif text.lower()=='false':
+                return False
+            else:
+                return None
+
+
         for path in options['path']:
             self.stdout.write(self.style.SUCCESS('Reading:{}'.format(path)))
             with open(path) as csv_file:
-                csv_reader = csv.reader(csv_file,delimiter = ',')
-                for row in csv_reader:
+                csv_reader = csv.DictReader(csv_file)
+                data = list(csv_reader)
+                for row in data:
                     ST = SquirrelTracker()
-                    ST.X = float(row[0])
-                    ST.Y = float(row[1])
-                    ST.Unique_Squirrel_ID = row[2]
-                    ST.Hectare = row[3]
-                    ST.Shift = row[4]
-                    ST.Date = row[5]
-                    ST.Hectare_Squirrel_Number = row[6]
-                    ST.Age = row[7]
-                    ST.Primary_Fur_Color = row[8]
-                    ST.Highlight_Fur_Color = row[9]
-                    ST.Combination_of_Primary_and_Highlight_Color = row[10]
-                    ST.Color_Notes = row[11]
-                    ST.Location = row[12]
-                    ST.Above_Ground_Sighter_Measurement = row[13]
-                    ST.Specific_Location = row[14]
-                    ST.Running = row[15]
-                    ST.Chasing = row[16]
-                    ST.Climbing = row[17]
-                    ST.Eating = row[18]
-                    ST.Foraging = row[19]
-                    ST.Other_Activities = row[20]
-                    ST.Kuks = row[21]
-                    ST.Quaas = row[22]
-                    ST.Moans = row[23]
-                    ST.Tail_Flags = row[24]
-                    ST.Tail_twitches = row[25]
-                    ST.Approaches = row[26]
-                    ST.Indifferent = row[27]
-                    ST.Runs_From =row[28]
-                    ST.Other_Interactions = row[29]
-                    ST.Latlong =row[30]
+                    ST.X = float(row['x'])
+                    ST.Y = float(row['y'])
+                    ST.Unique_Squirrel_ID = row['unique_squirrel_id']
+                    ST.Hectare = row['hectare']
+                    ST.Shift = row['shift']
+                    ST.Date = datetime.datetime.strptime(row['date'],'%m%d%Y')
+                    ST.Hectare_Squirrel_Number = row['hectare_squirrel_number']
+                    ST.Age = row['age']
+                    ST.Primary_Fur_Color = row['primary_fur_color']
+                    ST.Highlight_Fur_Color = row['highlight_fur_color']
+                    ST.Combination_of_Primary_and_Highlight_Color = row['combination_of_primary_and']
+                    ST.Color_Notes = row['color_notes']
+                    ST.Location = row['location']
+                    ST.Above_Ground_Sighter_Measurement = row['above_ground_sighter']
+                    ST.Specific_Location = row['specific_location']
+                    ST.Running = to_boo(row['running'])
+                    ST.Chasing = to_boo(row['chasing'])
+                    ST.Climbing = to_boo(row['climbing'])
+                    ST.Eating = to_boo(row['eating'])
+                    ST.Foraging = to_boo(row['foraging'])
+                    ST.Other_Activities = row['other_activities']
+                    ST.Kuks = to_boo(row['kuks'])
+                    ST.Quaas = to_boo(row['quaas'])
+                    ST.Moans = to_boo(row['moans'])
+                    ST.Tail_Flags = to_boo(row['tail_flags'])
+                    ST.Tail_Twitches = to_boo(row['tail_twitches'])
+                    ST.Approaches = to_boo(row['approaches'])
+                    ST.Indifferent = to_boo(row['indifferent'])
+                    ST.Runs_From =to_boo(row['runs_from'])
+                    ST.Other_Interactions = row['other_interactions']
                     ST.save()
