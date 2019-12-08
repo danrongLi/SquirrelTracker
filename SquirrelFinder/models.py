@@ -12,7 +12,7 @@ class SquirrelTracker(models.Model):
         help_text = ('Unique Squirrel ID'),
         max_length = 50,
         unique = True,
-        #primary_key=True,
+        primary_key=True,
         )
     PM = 'PM'
     AM = 'AM'
@@ -118,37 +118,11 @@ class SquirrelTracker(models.Model):
     Runs_From = models.BooleanField(
         help_text = ('Runs From?'),
         default = False,)
-    Other_Interactions = models.CharField(
-        help_text = ('Others Interactions'),
-        max_length = 50,
-        null = True,)
-    Hectare = models.CharField(
-        help_text = ('Hectare'),
-        max_length = 50,)
-    Hectare_Squirrel_Number = models.CharField(
-        help_text = ('Squirrel Number'),
-        max_length = 50,)
-    Highlight_Fur_Color = models.CharField(
-        help_text = ('Highlight Fur Color'),
-        max_length = 50,
-        )
-    Color_Notes= models.CharField(
-        help_text = ('Color Note'),
-        max_length = 50,)
-    Combination_of_Primary_and_Highlight_Color = models.CharField(
-        help_text = ('Combination of Primary and Highlight'),
-        max_length = 50,)
-    Above_Ground_Sighter_Measurement = models.CharField(
-            help_text = ('Above Ground Sighter Measurement'),
-            max_length = 50,
-            null = True,
-            )
     Moans = models.BooleanField(
             help_text='Moans',
             default = False,)
     
     def __str__(self):
         return self.Unique_Squirrel_ID
-    #def __str__(self):
-       # return self.name
+
 

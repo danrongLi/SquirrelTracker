@@ -53,14 +53,14 @@ def add_sighting(request):
     return render(request,'finder/edit.html',context)
 
 
-def edit_sighting(request, Squirrel_ID):
-    squirrel= SquirrelTracker.objects.filter( Unique_Squirrel_ID =Squirrel_ID).first()
+def edit_sighting(request, Unique_Squirrel_ID):
+    squirrel= SquirrelTracker.objects.get( pk =Unique_Squirrel_ID)
     if request.method =='POST':
         #check data with form
         form = SquirrelForm(request.POST, instance= squirrel)
         if form.is_valid():
             form.save()
-            return redirect(f'/SquirrelFinder/map/')
+            return redirect(f'/SquirrelFinder/sightings/')
     else:
         form = SquirrelForm(instance = squirrel)
         context = {
